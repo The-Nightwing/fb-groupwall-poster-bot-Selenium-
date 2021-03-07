@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.options import Options
 from decouple import config 
 import os
 
-path = 'chromedriver.exe' #path to chromedriver.exe
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 def fun(gmailID,password,content,driver):
     driver.get('https://www.facebook.com/')
@@ -63,7 +63,7 @@ if __name__=="__main__":
 
     link = input()
 
-    driver = webdriver.Chrome(path,chrome_options=options) 
+    driver = webdriver.Chrome(os.path.join(BASE_DIR,'chromedriver.exe'),chrome_options=options) 
     fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver)
 
 
