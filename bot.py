@@ -10,8 +10,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from decouple import config 
+import os
 
-path = 'C:\Program Files (x86)\chromedriver.exe' #path to chromedriver.exe
+path = 'chromedriver.exe' #path to chromedriver.exe
 
 def fun(gmailID,password,content,driver):
     driver.get('https://www.facebook.com/')
@@ -60,8 +61,9 @@ if __name__=="__main__":
     options.add_argument('--disable-logging')
     options.add_argument("--disable-notifications");
 
-    driver = webdriver.Chrome(path,chrome_options=options)
-    link= 'https://medium.com/analytics-vidhya/how-to-search-on-google-like-a-pro-dc6cb0535e3c' #what to post
+    link = input()
+
+    driver = webdriver.Chrome(path,chrome_options=options) 
     fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver)
 
 
