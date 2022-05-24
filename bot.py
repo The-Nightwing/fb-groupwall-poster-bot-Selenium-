@@ -30,15 +30,20 @@ def fun(gmailID,password,content,driver):
         '3007072836045135/?multi_permalinks=3756398127779265',
         '1416082568571443/?multi_permalinks=1755977424581954',
         'writersofmedium',
-        'mediumwriterslounge'
+    ]
+    
+    prog_groups = [
+        
     ]
 
     for group_id in groups:
 
         driver.get(fb_link+group_id)
-        time.sleep(10)
+        time.sleep(6)
+        driver.execute_script("scrollBy(0,-800);")
+        
         try:
-            driver.find_element_by_xpath('//*[contains(text(),"What\'s on your mind")]').click()
+            driver.find_element_by_xpath('//*[contains(text(),"Write something")]').click()
         except:
             driver.find_element_by_xpath('//*[contains(text(),"Create a public post")]').click()
 
@@ -50,7 +55,7 @@ def fun(gmailID,password,content,driver):
         driver.switch_to.active_element.send_keys(content)
         time.sleep(4)
         driver.find_element_by_xpath("//*[@aria-label='Post']").click()
-        time.sleep(10)
+        time.sleep(6)
     
     driver.close()
 
@@ -60,8 +65,9 @@ if __name__=="__main__":
     options = webdriver.ChromeOptions()
     options.add_argument('--disable-logging')
     options.add_argument("--disable-notifications");
+    options.add_argument('--headless')
 
-    link = input()
+    link = 'https://medium.com/illumination/thank-you-for-leaving-me-bce9ccc250e'
 
     driver = webdriver.Chrome(os.path.join(BASE_DIR,'chromedriver.exe'),chrome_options=options) 
     fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver)
