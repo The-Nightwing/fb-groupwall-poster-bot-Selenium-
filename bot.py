@@ -67,8 +67,7 @@ if __name__=="__main__":
     options.add_argument("--disable-notifications");
     options.add_argument('--headless')
 
-    link = 'https://medium.com/illumination/thank-you-for-leaving-me-bce9ccc250e'
-
+    link = 'https://shivamvv.medium.com/an-application-of-word2vec-model-54813b7c8216'
     driver = webdriver.Chrome(os.path.join(BASE_DIR,'chromedriver.exe'),chrome_options=options) 
     fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver)
 
