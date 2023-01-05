@@ -14,7 +14,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
-def fun(gmailID,password,content,driver):
+def fun(gmailID,password,content,driver, prog):
     driver.get('https://www.facebook.com/')
     user = driver.find_element_by_id('email')
     user.send_keys(gmailID)
@@ -33,8 +33,16 @@ def fun(gmailID,password,content,driver):
     ]
     
     prog_groups = [
-        
+        '821441531297615',
+        'pypcom/',
+        'includehelp/',
+        'dsawidccplus/',
+        '328341355260726/',
+        '356919327808418/?hoisted_section_header_type=recently_seen&multi_permalinks=2069315549902112'
     ]
+
+    if prog:
+        groups+=prog_groups
 
     for group_id in groups:
 
@@ -66,9 +74,9 @@ if __name__=="__main__":
     options.add_argument('--disable-logging')
     options.add_argument("--disable-notifications");
     options.add_argument('--headless')
-
-    link = 'https://shivamvv.medium.com/an-application-of-word2vec-model-54813b7c8216'
+    prog=True
+    link = 'https://shivamvv.medium.com/mykaarma-interview-experience-2021-b2d2bbdc1f20'
     driver = webdriver.Chrome(os.path.join(BASE_DIR,'chromedriver.exe'),chrome_options=options) 
-    fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver)
+    fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver, prog)
 
 
