@@ -4,7 +4,7 @@ A Python script that uses Selenium to automate the process of logging into Faceb
 
 ## Requirements
 
-- Python 3.7 or later
+- Python 3.2 or later
 - Selenium
 - ChromeDriver
 
@@ -23,8 +23,8 @@ pip install -r requirements.txt
 
 4. Add your Facebook username and password to the .env file
 ```bash
-FB_USERNAME=yourusername
-FB_PASSWORD=yourpassword
+userID=yourusername
+password=yourpassword
 ```
 
 ## Usage
