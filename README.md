@@ -23,8 +23,8 @@ pip install -r requirements.txt
 
 4. Add your Facebook username and password to the .env file
 ```bash
-FB_USERNAME=yourusername
-FB_PASSWORD=yourpassword
+userID=yourusername
+password=yourpassword
 ```
 
 ## Usage

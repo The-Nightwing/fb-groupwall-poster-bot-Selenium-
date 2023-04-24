@@ -75,8 +75,8 @@ if __name__=="__main__":
     options.add_argument("--disable-notifications");
     options.add_argument('--headless')
     prog=True
-    link = 'https://shivamvv.medium.com/mykaarma-interview-experience-2021-b2d2bbdc1f20'
-    driver = webdriver.Chrome(os.path.join(BASE_DIR,'chromedriver.exe'),chrome_options=options) 
+    link = 'https://github.com/The-Nightwing/fb-groupwall-poster-bot-Selenium-.git'
+    driver = webdriver.Chrome(os.path.join(BASE_DIR,'chromedriver.exe'), options=options) 
     fun(config('userID',default=''),config('password',default=''),link+"\n"+'Drop your links too <3',driver, prog)
 
 
